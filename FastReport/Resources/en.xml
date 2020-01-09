@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Language Name="en">
+  <Fonts>
+    <FontMustNotBeModifiedEmbeddedOrExchanged Text="{0} font must not be modified, embedded, or exchanged in any manner without first obtaining permission of the legal owner."/>
+    <FontMayNotBeSubsettedPriorToEmbedding Text="{0} font may not be subsetted prior to embedding."/>
+  </Fonts>
   <Buttons>
     <Ok Text="OK"/>
     <Cancel Text="Cancel"/>

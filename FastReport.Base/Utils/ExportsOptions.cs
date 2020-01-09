@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace FastReport.Utils
 {
+#if !COMMUNITY
     partial class ExportsOptions
     {
         private delegate List<ExportsTreeNode> MakeDefaultExportsMenuDelegate();
@@ -258,4 +259,5 @@ namespace FastReport.Utils
             FindItem(null, exportType, menuNodes).Enabled = enabled;
         }
     }
+#endif
 }

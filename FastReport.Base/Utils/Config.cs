@@ -190,7 +190,9 @@ namespace FastReport.Utils
 #endif
             if (WebMode)
             {
+#if !COMMUNITY
                 RestoreExportOptions();
+#endif
             }
             LoadPlugins();
 
@@ -220,9 +222,9 @@ namespace FastReport.Utils
             FLogs += s + "\r\n";
         }
 
-        #endregion Internal Methods
+#endregion Internal Methods
 
-        #region Private Methods
+#region Private Methods
 
         private static string GetTempFileName()
         {
@@ -251,7 +253,10 @@ namespace FastReport.Utils
             FDoc.AutoIndent = true;
             SaveUIStyle();
             SaveUIOptions();
-            SaveExportOptions();
+#if !COMMUNITY
+                SaveExportOptions();
+#endif
+
             if (!WebMode)
             {
                 try
@@ -308,7 +313,9 @@ namespace FastReport.Utils
                 RestoreUIStyle();
                 RestoreDefaultLanguage();
                 RestoreUIOptions();
+#if !COMMUNITY
                 RestoreExportOptions();
+#endif
                 Res.LoadDefaultLocale();
                 AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
             }
